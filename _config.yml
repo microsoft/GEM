@@ -1,1 +1,4 @@
 theme: jekyll-theme-slate
+domain: microsoft.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://microsoft.github.io  # the base hostname and protocol for your site, e.g. http://example.com
+baseurl: /GEM/      # place folder name if the site is served in a subfolder   

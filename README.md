@@ -1,5 +1,5 @@
-# GEM: 
-[**Tasks**](#tasks-and-languages) |
+# GEM: A General Evaluation Benchmark for Multimodal Tasks
+[**Tasks**](#tasks) |
 [**Dataset**](#get-dataset) |
 [**Leaderboard**](https://microsoft.github.io/GEM/) |
 [**Paper**](TBD)
@@ -18,7 +18,7 @@ The current version of GEM is composed of 8 tasks. For each task, training and v
 ![](./img/GEM-V.PNG)
 
 
-## Tasks and Languages
+## Tasks
 The 8 tasks in GEM can be categorized into 4 groups: image retrieval tasks, image captioning tasks, video retrieval tasks and video captioning tasks.
 
 ### Image Retrieval Tasks
@@ -82,7 +82,7 @@ If you use our benchmark or dataset, please cite our paper `\cite{lin2021gem}`.
 ```
 @inproceedings{lin2021gem,
     title = "{GEM}: A General Evaluation Benchmark for Multimodal Tasks",
-    author = "Lin Su and Nan Duan and Edward Cui and Lei Ji and Chenfei Wu and Huaishao Luo Yongfei Liu and Ming Zhong and Taroon Bharti and Arun Sacheti",
+    author = "Lin Su and Nan Duan and Edward Cui and Lei Ji and Chenfei Wu and Huaishao and Luo Yongfei Liu and Ming Zhong and Taroon Bharti and Arun Sacheti",
     booktitle = "Findings of the Association for Computational Linguistics",
     month = aug,
     year = "2021",
