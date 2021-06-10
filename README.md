@@ -1,14 +1,99 @@
-# Project
+# GEM: 
+[**Tasks**](#tasks-and-languages) |
+[**Dataset**](#get-dataset) |
+[**Leaderboard**](https://microsoft.github.io/GEM/) |
+[**Paper**](TBD)
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+## Introduction
+This repository contains information about the general multi-modal evaluation benchmark GEM, which is composed of GEM-I for image tasks spans 20 languages and GEM-V for video tasks spans 30 languages.
+The current version of GEM is composed of 8 tasks. For each task, training and validation set are provided. GEM is not only the largest vision-language dataset covering image-language tasks and video-language tasks at the same time, but also labeled in multiple languages.
 
-As the maintainer of this project, please make a few updates:
+### GEM-I
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+![](./img/GEM-I.PNG)
+
+
+### GEM-V
+
+![](./img/GEM-V.PNG)
+
+
+## Tasks and Languages
+The 8 tasks in GEM can be categorized into 4 groups: image retrieval tasks, image captioning tasks, video retrieval tasks and video captioning tasks.
+
+### Image Retrieval Tasks
+
+#### Query -> Image Retrieval
+
+#### Query -> Image+Title Retrieval
+
+
+### Image Captioning Tasks
+
+#### Image -> Query Captioning
+
+
+### Video Retrieval Tasks
+
+#### Query -> Video Retrieval
+
+#### Query -> Video+Title Retrieval
+
+
+### Video Captioning Tasks
+
+#### Video -> Query Captioning
+
+#### Title -> Query Captioning
+
+#### Video+Title-> Query Captioning
+
+
+## Get Dataset
+In order to use our dataset, please navigate to [GEM Leaderboard](https://microsoft.github.io/GEM/) and agree to our terms of service. After you do so a download link will be made available.
+
+## Leaderboard Submission
+### Submissions
+To submit your predictions for evaluation, please create a single folder which contains the 11 sub-folders named after each task (see [reference file](evaluation/M3P_prediction_on_GEM_test) for an example). 
+Inside each folder, create one prediction file for each language and name the file using the following format: `{language}.prediction` where `{language}` is the 2 character [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code.
+Please validate that you have done this correctly by evaluating against the development file. Once that is done <a href='GEM-team@microsoft.com'>email your submission</a>. We will reply with your model performance.
+
+### Evaluation
+To evaluate your model's performance, we will compare your prediction files with the ground truth files.
+We are keeping our evaluation data held out but we ask all models first evaluate performance on the development portion of the dataset before submitting their predictions for the evaluation dataset.
+To evaluate your performance, please use the following command: 
+```
+python GEM_evaluate.py --prediction_dir <prediction_files_folder> --ground_truth_dir <ground_truth_dir> --tasks QIR,QITR --split dev 
+```
+
+This file has several dependencies:
+```
+numpy
+sklearn
+seqeval
+sacrebleu
+```
+
+The detailed format of each task is at [Evaluation ReadMe](./evaluation/README.md).
+### Baseline
+To aid your model comparison we have included the output of our baseline system, M3P.  Please find the [dev example](evaluation/M3P_prediction_on_GEM_dev) and [test example](evaluation/M3P_prediction_on_GEM_test).
+## Paper
+If you use our benchmark or dataset, please cite our paper `\cite{lin2021gem}`.
+```
+@inproceedings{lin2021gem,
+    title = "{GEM}: A General Evaluation Benchmark for Multimodal Tasks",
+    author = "Lin Su and Nan Duan and Edward Cui and Lei Ji and Chenfei Wu and Huaishao Luo Yongfei Liu and Ming Zhong and Taroon Bharti and Arun Sacheti",
+    booktitle = "Findings of the Association for Computational Linguistics",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "",
+    doi = "",
+    pages = "",
+    abstract = "",
+}
+```
 
 ## Contributing
 
