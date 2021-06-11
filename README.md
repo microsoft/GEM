@@ -1,7 +1,7 @@
 # GEM: A General Evaluation Benchmark for Multimodal Tasks
 [**Tasks**](#tasks) |
 [**Dataset**](#get-dataset) |
-[**Leaderboard**](https://microsoft.github.io/GEM/) |
+[**Leaderboard**](https://fuzzy-robot-fa0b9e30.pages.github.io/) |
 [**Paper**](TBD)
 
 ## Introduction
@@ -9,11 +9,14 @@ This repository contains information about the general multi-modal evaluation be
 The current version of GEM is composed of 8 tasks. For each task, training and validation set are provided. GEM is not only the largest vision-language dataset covering image-language tasks and video-language tasks at the same time, but also labeled in multiple languages.
 
 ### GEM-I
+GEM-I contains 1.2 million {Query, Image, Title} triplets in 20 different languages for text-to-image retrieval and image captioning tasks. The statistics can be found in below table.
+
 
 ![](./img/GEM-I.PNG)
 
 
 ### GEM-V
+GEM-V contains 99K {Query, Video, Title} triplets in 30 languages for text-to-video retrieval and video captioning tasks. The statistics can be found in below table.
 
 ![](./img/GEM-V.PNG)
 
@@ -24,33 +27,38 @@ The 8 tasks in GEM can be categorized into 4 groups: image retrieval tasks, imag
 ### Image Retrieval Tasks
 
 #### Query -> Image Retrieval
+Within each language, we use query to retrieve images, and the evaluation metric is mean-Recall (arithmetic mean of Recall@K for K in {1, 5, 10}).
 
 #### Query -> Image+Title Retrieval
-
+Within each language, we use query to retrieve images with title as context, and the evaluation metric is mean-Recall (arithmetic mean of Recall@K for K ∈ {1, 5, 10}).
 
 ### Image Captioning Tasks
 
 #### Image -> Query Captioning
+We use image to generate caption text, and use ROUGE-L as the evaluation metric.
 
 
 ### Video Retrieval Tasks
 
 #### Query -> Video Retrieval
+Within each language, we use query to retrieve videos, and the evaluation metric is mean-Recall (arithmetic mean of Recall@K for K in {1, 5, 10}).
 
 #### Query -> Video+Title Retrieval
-
+Within each language, we use query to retrieve videos with title as context, and the evaluation metric is mean-Recall (arithmetic mean of Recall@K for K in {1, 5, 10}).
 
 ### Video Captioning Tasks
 
 #### Video -> Query Captioning
+We use video to generate caption text, and use ROUGE-L as the evaluation metric.
 
 #### Title -> Query Captioning
+We use Title to generate caption text, and use ROUGE-L as the evaluation metric.
 
 #### Video+Title-> Query Captioning
-
+We use video and title to generate caption text, and use ROUGE-L as the evaluation metric.
 
 ## Get Dataset
-In order to use our dataset, please navigate to [GEM Leaderboard](https://microsoft.github.io/GEM/) and agree to our terms of service. After you do so a download link will be made available.
+In order to use our dataset, please navigate to [GEM Leaderboard](https://fuzzy-robot-fa0b9e30.pages.github.io/) and agree to our terms of service. After you do so a download link will be made available.
 
 ## Leaderboard Submission
 ### Submissions
