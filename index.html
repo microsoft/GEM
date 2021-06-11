@@ -78,8 +78,8 @@
 					<img src="img/MicrosoftLogo.png">
 				</center>
 				<div class="row">
-					<p>GEM (General Evaluation on Multi-modal tasks) is a new benchmark dataset to evaluate the performance of cross-modal pre-trained models including understanding and generation tasks.</p>
-					<p>The current version of GEM is composed of 1 task spans 10 languages. For each task, training and validation set are provided. As far as we know, GEM is the first benckmark that ensembles different multi-modal tasks. In addition to existing existing cross-modal tasks (i.e. image retrieval and text retrieval on MSCOCO, Flickr30k), GEM adds a new task from Bing scenarios as well - MILD (multilingual image-language dataset). GEM provides a comprehensive benchmark for quantifying the quality of a pre-trained model on cross-lingual cross-modal tasks.</p>
+					<p>GEM (A General Evaluation Benchmark on Multi-modal Tasks) is a new benchmark dataset to evaluate the performance of cross-modal pre-trained models including understanding and generation tasks.</p>
+					<p>The current version of GEM is composed of 8 tasks. For each task, training and validation set are provided. GEM is not only the largest vision-language dataset covering image-language tasks and video-language tasks at the same time, but also labeled in multiple languages.</p>
 				</div>
 				<div class="row">
 					<h3>Terms and Conditions</h3>
@@ -103,40 +103,75 @@
 						<h2>GEM Dataset and Leaderboard</h2>
 						<h4>Tasks</h4>
 						<ol>
-							<li>mR</li>
-							<li>BLEU</li>
-							<li>CIDEr</li>
+							<li>QI_mR: Query-Image Retrieval</li>
+							<li>QIT_mR: Query-Image-Title Retrieval</li>
+							<li>IQ_RougeL: Image-Query Captioning</li>
+							<li>QV_mR: Query-Image Retrieval</li>
+							<li>QVT_mR: Query-Image-Title Retrieval</li>
+							<li>VQ_RougeL: Image-Query Captioning</li>
 						</ol>
 						<h4>Relevant Links</h4>
 						<a class="btn btn-primary btn-md" style='margin-right: 3px;' href="https://github.com/microsoft/GEM">GEM Submission Guideline/Github</a>
-						<a class="btn btn-primary btn-md" style='margin-right: 3px;' href="https://arxiv.org/pdf/2006.02635.pdf">MILD Paper</a>
+						<a class="btn btn-primary btn-md" style='margin-right: 3px;' href="TBD">GEM Paper</a>
 						<a class="btn btn-primary btn-md" style='margin-right: 3px;' href="https://github.com/microsoft/M3P">M3P Baseline</a>
 						<div class="row">&nbsp;</div>
 						<div id="GEMdata"> </div>
 						<div class="row">&nbsp;</div>
-						<h4>Leaderboard (05/25/2020-Present) ranked by GEM Score (average score on 4 tasks)</h4>
+						<h4>GEM-I Leaderboard (06/01/2021-Present) ranked by GEM-I Score (averaged score on 3 tasks)</h4>
 						<div style="text-align:center">
-							<table class="table table-striped" id='GEMtable'>
+							<table class="table table-striped" id='GEMItable'>
 							<thead>
 								<tr>
 									<th>Rank</th>
 									<th class="col-md-9">Model</th>
 									<th class="col-md-1">Submission Date</th>
-									<th class="col-md-1">mR</th>
-									<th class="col-md-1">BLEU</th>
-									<th class="col-md-1">CIDEr</th>
-									<th class="col-md-1">GEM Score</th>
+									<th class="col-md-1">QI_mR</th>
+									<th class="col-md-1">QIT_mR</th>
+									<th class="col-md-1">IQ_RougeL</th>
+									<th class="col-md-1">GEM_I Score</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tbody>
 									<tr>
-									   	<td><strong>M3P Baseline</strong> (M3P Team)</td>
-									   	<td>2020-06-04</a></td>
-									   	<td>79.7</td>
-										<td>79.6</td>
-										<td>83.5</td>
-										<td>66.0</td>
+									   	<td><strong>M3P Baseline</strong> (GEM Team)</td>
+									   	<td>2021-06-01</a></td>
+									   	<td>19.85</td>
+										<td>79.74</td>
+										<td>5.61</td>
+										<td>35.07</td>
+								   </tr>
+							</tbody>
+						</table>
+						</div>
+						<div class="row">&nbsp;</div>
+						<h4>GEM-V Leaderboard (06/01/2021-Present) ranked by GEM-V Score (averaged score on 5 tasks)</h4>
+						<div style="text-align:center">
+							<table class="table table-striped" id='GEMVtable'>
+							<thead>
+								<tr>
+									<th>Rank</th>
+									<th class="col-md-9">Model</th>
+									<th class="col-md-1">Submission Date</th>
+									<th class="col-md-1">QV_mR</th>
+									<th class="col-md-1">QVT_mR</th>
+									<th class="col-md-1">VQ_RougeL</th>
+									<th class="col-md-1">TQ_RougeL</th>
+									<th class="col-md-1">VTQ_RougeL</th>
+									<th class="col-md-1">GEM_V Score</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tbody>
+									<tr>
+									   	<td><strong>m-UniVL Baseline</strong> (GEM Team)</td>
+									   	<td>2021-06-01</a></td>
+									   	<td>15.44</td>
+										<td>58.83</td>
+										<td>6.89</td>
+										<td>29.15</td>
+										<td>29.67</td>
+										<td>28.00</td>
 								   </tr>
 							</tbody>
 						</table>
@@ -154,7 +189,7 @@
 						<ol>
 							<li>Generate your prediction output for the dev set.</li>
 							<li>Run the official evaluation methodologies found in the task specific git repo and verify your systems are running as expected.</li>
-							<li>Generate your prediction output for the test set and submit the following information by <script type="text/javascript">gen_mail_to_link('GEM','microsoft.com','GEM Submission','emailing us');</script>.</li>
+							<li>Generate your prediction output for the test set and submit the following information by <script type="text/javascript">gen_mail_to_link('GEM-team','microsoft.com','GEM Submission','emailing us');</script>.</li>
 						</ol>
 						<p>Your email should include:</p>
 						<ol>
@@ -178,71 +213,21 @@
 						<h1>About GEM</h1>
 						<h3></h3>
 						<div class="row">
-							<div class="col-md-12"><p>GEM (General Evaluation on Multi-modal tasks) is a new benchmark dataset to evaluate the performance of cross-modal pre-trained models including understanding and generation tasks.</p></div>
+							<div class="col-md-12"><p>GEM (A General Evaluation Benchmark on Multi-modal Tasks) is a new benchmark dataset to evaluate the performance of cross-modal pre-trained models including understanding and generation tasks.</p></div>
 							</div>
 						<h2>How to cite</h2>
 						<div style="overflow-x:scroll; white-space: nowrap">
-						<code>@article{huang2020m3p,<br>
-							&nbsp;&nbsp;title={M3P: Learning Universal Representations via Multitask Multilingual Multimodal Pre-training},<br>
-							&nbsp;&nbsp;author={Haoyang Huang and Lin Su and Di Qi and Nan Duan and Edward Cui and Taroon Bharti and Lei Zhang and Lijuan Wang and Jianfeng Gao and Bei Liu and Jianlong Fu and Dongdong Zhang and Xin Liu and Ming Zho},<br>
-							&nbsp;&nbsp;journal={arXiv},<br>
-							&nbsp;&nbsp;year={2020},<br>
-							&nbsp;&nbsp;volume={abs/2006.02635}<br>
+						<code>@article{lin2021gem,<br>
+							&nbsp;&nbsp;title={{GEM}: A General Evaluation Benchmark for Multimodal Tasks},<br>
+							&nbsp;&nbsp;author={Lin Su and Nan Duan and Edward Cui and Lei Ji and Chenfei Wu and Huaishao and Luo Yongfei Liu and Ming Zhong and Taroon Bharti and Arun Sacheti},<br>
+							&nbsp;&nbsp;booktitle="Findings of the Association for Computational Linguistics",<br>
+							&nbsp;&nbsp;year={2021}<br>
 }</code>
 						</div>
 						<p></p>
-						<p>Additionally, since GEM is also built out of exiting 5 datasets, please ensure you cite all of them.</p>
-						<p>An example: We evaluate our model using the GEM benchmark \cite{Liang2020GEMAN}, a cross-lingual evaluation benchmark consiting of Named Entity Resolution (NER) \cite{Sang2002IntroductionTT} \cite{Sang2003IntroductionTT}, Part of Speech Tagging (POS) \cite{11234/1-3105}, News Classification (NC), MLQA \cite{Lewis2019MLQAEC}, XNLI \cite{Conneau2018XNLIEC}, PAWS-X \cite{Yang2019PAWSXAC}, Query-Ad Matching (QADSM), Web Page Ranking (WPR), QA Matching (QAM), Question Generation (QG) and News Title Generation (NTG).</p>
-						<div style="overflow-x:scroll; white-space: nowrap">
-						<code>@misc{11234/1-3105,<br>
-&nbsp;&nbsp;title={Universal Dependencies 2.5},<br>
-&nbsp;&nbsp;author={Zeman, Daniel and Nivre, Joakim and Abrams, Mitchell and Aepli, No{\"e}mi and Agi{\'c}, {\v Z}eljko and Ahrenberg, Lars and Aleksandravi{\v c}i{\=u}t{\.e}, Gabriel{\.e} and Antonsen, Lene and Aplonova, Katya and Aranzabe, Maria Jesus and Arutie, Gashaw and Asahara, Masayuki and Ateyah, Luma and Attia, Mohammed and Atutxa, Aitziber and Augustinus, Liesbeth and Badmaeva, Elena and Ballesteros, Miguel and Banerjee, Esha and Bank, Sebastian and Barbu Mititelu, Verginica and Basmov, Victoria and Batchelor, Colin and Bauer, John and Bellato, Sandra and Bengoetxea, Kepa and Berzak, Yevgeni and Bhat, Irshad Ahmad and Bhat, Riyaz Ahmad and Biagetti, Erica and Bick, Eckhard and Bielinskien{\.e}, Agn{\.e} and Blokland, Rogier and Bobicev, Victoria and Boizou, Lo{\"{\i}}c and Borges V{\"o}lker, Emanuel and B{\"o}rstell, Carl and Bosco, Cristina and Bouma, Gosse and Bowman, Sam and Boyd, Adriane and Brokait{\.e}, Kristina and Burchardt, Aljoscha and Candito, Marie and Caron, Bernard and Caron, Gauthier and Cavalcanti, Tatiana and Cebiro{\u g}lu Eryi{\u g}it, G{\"u}l{\c s}en and Cecchini, Flavio Massimiliano and Celano, Giuseppe G. A. and {\v C}{\'e}pl{\"o}, Slavom{\'{\i}}r and Cetin, Savas and Chalub, Fabricio and Choi, Jinho and Cho, Yongseok and Chun, Jayeol and Cignarella, Alessandra T. and Cinkov{\'a}, Silvie and Collomb, Aur{\'e}lie and {\c C}{\"o}ltekin, {\c C}a{\u g}r{\i} and Connor, Miriam and Courtin, Marine and Davidson, Elizabeth and de Marneffe, Marie-Catherine and de Paiva, Valeria and de Souza, Elvis and Diaz de Ilarraza, Arantza and Dickerson, Carly and Dione, Bamba and Dirix, Peter and Dobrovoljc, Kaja and Dozat, Timothy and Droganova, Kira and Dwivedi, Puneet and Eckhoff, Hanne and Eli, Marhaba and Elkahky, Ali and Ephrem, Binyam and Erina, Olga and Erjavec, Toma{\v z} and Etienne, Aline and Evelyn, Wograine and Farkas, Rich{\'a}rd and Fernandez Alcalde, Hector and Foster, Jennifer and Freitas, Cl{\'a}udia and Fujita, Kazunori and Gajdo{\v s}ov{\'a}, Katar{\'{\i}}na and Galbraith, Daniel and Garcia, Marcos and G{\"a}rdenfors, Moa and Garza, Sebastian and Gerdes, Kim and Ginter, Filip and Goenaga, Iakes and Gojenola, Koldo and G{\"o}k{\i}rmak, Memduh and Goldberg, Yoav and G{\'o}mez Guinovart, Xavier and Gonz{\'a}lez Saavedra, Berta and Grici{\=u}t{\.e}, Bernadeta and Grioni, Matias and Gr{\=u}z{\={\i}}tis, Normunds and Guillaume, Bruno and Guillot-Barbance, C{\'e}line and Habash, Nizar and Haji{\v c}, Jan and Haji{\v c} jr., Jan and H{\"a}m{\"a}l{\"a}inen, Mika and H{\`a} M{\~y}, Linh and Han, Na-Rae and Harris, Kim and Haug, Dag and Heinecke, Johannes and Hennig, Felix and Hladk{\'a}, Barbora and Hlav{\'a}{\v c}ov{\'a}, Jaroslava and Hociung, Florinel and Hohle, Petter and Hwang, Jena and Ikeda, Takumi and Ion, Radu and Irimia, Elena and Ishola, {\d O}l{\'a}j{\'{\i}}d{\'e} and Jel{\'{\i}}nek, Tom{\'a}{\v s} and Johannsen, Anders and J{\o}rgensen, Fredrik and Juutinen, Markus and Ka{\c s}{\i}kara, H{\"u}ner and Kaasen, Andre and Kabaeva, Nadezhda and Kahane, Sylvain and Kanayama, Hiroshi and Kanerva, Jenna and Katz, Boris and Kayadelen, Tolga and Kenney, Jessica and Kettnerov{\'a}, V{\'a}clava and Kirchner, Jesse and Klementieva, Elena and K{\"o}hn, Arne and Kopacewicz, Kamil and Kotsyba, Natalia and Kovalevskait{\.e}, Jolanta and Krek, Simon and Kwak, Sookyoung and Laippala, Veronika and Lambertino, Lorenzo and Lam, Lucia and Lando, Tatiana and Larasati, Septina Dian and Lavrentiev, Alexei and Lee, John and L{\^e} H{\`{\^o}}ng, Phương and Lenci, Alessandro and Lertpradit, Saran and Leung, Herman and Li, Cheuk Ying and Li, Josie and Li, Keying and Lim, {KyungTae} and Liovina, Maria and Li, Yuan and Ljube{\v s}i{\'c}, Nikola and Loginova, Olga and Lyashevskaya, Olga and Lynn, Teresa and Macketanz, Vivien and Makazhanov, Aibek and Mandl, Michael and Manning, Christopher and Manurung, Ruli and M{\u a}r{\u a}nduc, C{\u a}t{\u a}lina and Mare{\v c}ek, David and Marheinecke, Katrin and Mart{\'{\i}}nez Alonso, H{\'e}ctor and Martins, Andr{\'e} and Ma{\v s}ek, Jan and Matsumoto, Yuji and {McDonald}, Ryan and {McGuinness}, Sarah and Mendon{\c c}a, Gustavo and Miekka, Niko and Misirpashayeva, Margarita and Missil{\"a}, Anna and Mititelu, C{\u a}t{\u a}lin and Mitrofan, Maria and Miyao, Yusuke and Montemagni, Simonetta and More, Amir and Moreno Romero, Laura and Mori, Keiko Sophie and Morioka, Tomohiko and Mori, Shinsuke and Moro, Shigeki and Mortensen, Bjartur and Moskalevskyi, Bohdan and Muischnek, Kadri and Munro, Robert and Murawaki, Yugo and M{\"u}{\"u}risep, Kaili and Nainwani, Pinkey and Navarro Hor{\~n}iacek, Juan Ignacio and Nedoluzhko, Anna and Ne{\v s}pore-B{\=e}rzkalne, Gunta and Nguy{\~{\^e}}n Th{\d i}, Lương and Nguy{\~{\^e}}n Th{\d i} Minh, Huy{\`{\^e}}n and Nikaido, Yoshihiro and Nikolaev, Vitaly and Nitisaroj, Rattima and Nurmi, Hanna and Ojala, Stina and Ojha, Atul Kr. and Ol{\'u}{\`o}kun, Ad{\'e}day{\d o}̀ and Omura, Mai and Osenova, Petya and {\"O}stling, Robert and {\O}vrelid, Lilja and Partanen, Niko and Pascual, Elena and Passarotti, Marco and Patejuk, Agnieszka and Paulino-Passos, Guilherme and Peljak-{\L}api{\'n}ska, Angelika and Peng, Siyao and Perez, Cenel-Augusto and Perrier, Guy and Petrova, Daria and Petrov, Slav and Phelan, Jason and Piitulainen, Jussi and Pirinen, Tommi A and Pitler, Emily and Plank, Barbara and Poibeau, Thierry and Ponomareva, Larisa and Popel, Martin and Pretkalni{\c n}a, Lauma and Pr{\'e}vost, Sophie and Prokopidis, Prokopis and Przepi{\'o}rkowski, Adam and Puolakainen, Tiina and Pyysalo, Sampo and Qi, Peng and R{\"a}{\"a}bis, Andriela and Rademaker, Alexandre and Ramasamy, Loganathan and Rama, Taraka and Ramisch, Carlos and Ravishankar, Vinit and Real, Livy and Reddy, Siva and Rehm, Georg and Riabov, Ivan and Rie{\ss}ler, Michael and Rimkut{\.e}, Erika and Rinaldi, Larissa and Rituma, Laura and Rocha, Luisa and Romanenko, Mykhailo and Rosa, Rudolf and Rovati, Davide and Roșca, Valentin and Rudina, Olga and Rueter, Jack and Sadde, Shoval and Sagot, Beno{\^{\i}}t and Saleh, Shadi and Salomoni, Alessio and Samard{\v z}i{\'c}, Tanja and Samson, Stephanie and Sanguinetti, Manuela and S{\"a}rg, Dage and Saul{\={\i}}te, Baiba and Sawanakunanon, Yanin and Schneider, Nathan and Schuster, Sebastian and Seddah, Djam{\'e} and Seeker, Wolfgang and Seraji, Mojgan and Shen, Mo and Shimada, Atsuko and Shirasu, Hiroyuki and Shohibussirri, Muh and Sichinava, Dmitry and Silveira, Aline and Silveira, Natalia and Simi, Maria and Simionescu, Radu and Simk{\'o}, Katalin and {\v S}imkov{\'a}, M{\'a}ria and Simov, Kiril and Smith, Aaron and Soares-Bastos, Isabela and Spadine, Carolyn and Stella, Antonio and Straka, Milan and Strnadov{\'a}, Jana and Suhr, Alane and Sulubacak, Umut and Suzuki, Shingo and Sz{\'a}nt{\'o}, Zsolt and Taji, Dima and Takahashi, Yuta and Tamburini, Fabio and Tanaka, Takaaki and Tellier, Isabelle and Thomas, Guillaume and Torga, Liisi and Trosterud, Trond and Trukhina, Anna and Tsarfaty, Reut and Tyers, Francis and Uematsu, Sumire and Ure{\v s}ov{\'a}, Zde{\v n}ka and Uria, Larraitz and Uszkoreit, Hans and Utka, Andrius and Vajjala, Sowmya and van Niekerk, Daniel and van Noord, Gertjan and Varga, Viktor and Villemonte de la Clergerie, Eric and Vincze, Veronika and Wallin, Lars and Walsh, Abigail and Wang, Jing Xian and Washington, Jonathan North and Wendt, Maximilan and Williams, Seyi and Wir{\'e}n, Mats and Wittern, Christian and Woldemariam, Tsegay and Wong, Tak-sum and Wr{\'o}blewska, Alina and Yako, Mary and Yamazaki, Naoki and Yan, Chunxiao and Yasuoka, Koichi and Yavrumyan, Marat M. and Yu, Zhuoran and {\v Z}abokrtsk{\'y}, Zden{\v e}k and Zeldes, Amir and Zhang, Manying and Zhu, Hanzhi},<br>
-&nbsp;&nbsp;url={http://hdl.handle.net/11234/1-3105},<br>
-&nbsp;&nbsp;note={{LINDAT}/{CLARIAH}-{CZ} digital library at the Institute of Formal and Applied Linguistics ({{\'U}FAL}), Faculty of Mathematics and Physics, Charles University},<br>
-&nbsp;&nbsp;copyright={Licence Universal Dependencies v2.5},<br>
-&nbsp;&nbsp;year={2019}<br>
-}<br><br>
-
-@article{Sang2003IntroductionTT,<br>
-&nbsp;&nbsp;title={Introduction to the CoNLL-2003 Shared Task: Language-Independent Named Entity Recognition},<br>
-&nbsp;&nbsp;author={Erik F. Tjong Kim Sang and Fien De Meulder},<br>
-&nbsp;&nbsp;journal={ArXiv},<br>
-&nbsp;&nbsp;year={2003},<br>
-&nbsp;&nbsp;volume={cs.CL/0306050}<br>
-}<br><br>
-
-@article{Sang2002IntroductionTT,<br>
-&nbsp;&nbsp;title={Introduction to the CoNLL-2002 Shared Task: Language-Independent Named Entity Recognition},<br>
-&nbsp;&nbsp;author={Erik F. Tjong Kim Sang},<br>
-&nbsp;&nbsp;journal={ArXiv},<br>
-&nbsp;&nbsp;year={2002},<br>
-&nbsp;&nbsp;volume={cs.CL/0209010}<br>
-}<br><br>
-
-@inproceedings{Conneau2018XNLIEC,<br>
-&nbsp;&nbsp;title={XNLI: Evaluating Cross-lingual Sentence Representations},<br>
-&nbsp;&nbsp;author={Alexis Conneau and Guillaume Lample and Ruty Rinott and Adina Williams and Samuel R. Bowman and Holger Schwenk and Veselin Stoyanov},<br>
-&nbsp;&nbsp;booktitle={EMNLP},<br>
-&nbsp;&nbsp;year={2018}<br>
-}<br><br>
-
-@article{Lewis2019MLQAEC,<br>
-&nbsp;&nbsp;title={MLQA: Evaluating Cross-lingual Extractive Question Answering},<br>
-&nbsp;&nbsp;author={Patrick Lewis and Barlas Oguz and Ruty Rinott and Sebastian Riedel and Holger Schwenk},<br>
-&nbsp;&nbsp;journal={ArXiv},<br>
-&nbsp;&nbsp;year={2019},<br>
-&nbsp;&nbsp;volume={abs/1910.07475}<br>
-}<br><br>
-
-@article{Yang2019PAWSXAC,<br>
-&nbsp;&nbsp;title={PAWS-X: A Cross-lingual Adversarial Dataset for Paraphrase Identification},<br>
-&nbsp;&nbsp;author={Yinfei Yang and Yuan Zhang and Chris Tar and Jason Baldridge},<br>
-&nbsp;&nbsp;journal={ArXiv},<br>
-&nbsp;&nbsp;year={2019},<br>
-&nbsp;&nbsp;volume={abs/1908.11828}<br>
-							}<br><br></code></div>
+						
 						<h2>&nbsp;</h2>
-						<h2>Current Team <script type="text/javascript">gen_mail_to_link('GEM','microsoft.com','GEM Feedback','[Email us]');</script></h2>
+						<h2>Current Team <script type="text/javascript">gen_mail_to_link('GEM-team','microsoft.com','GEM Feedback','[Email us]');</script></h2>
 						<div class="row">
 							<div class="col-md-4"><a href="https://www.microsoft.com/en-us/research/people/nanduan/"><img src='https://www.microsoft.com/en-us/research/uploads/prod/2019/08/me.small_.jpg' width="117" height="150" /><br /><strong>Nan Duan</strong><br />Principal Research Manager</a></div>
 						</div>
@@ -457,7 +442,16 @@
 		<script src="js/jquery.easing.min.js"></script>
 		<script src="js/scrolling-nav.js"></script>
 		<script>
-			var rankings = ['GEMtable']
+			var rankings = ['GEMItable']
+			for(var j=0; j < rankings.length; j++) {
+				var rows = document.getElementById(rankings[j]).rows;
+				for(var i = 1, td; i < rows.length; i++){
+					td = document.createElement('td');
+					td.appendChild(document.createTextNode(i));
+					rows[i].insertBefore(td, rows[i].firstChild);
+				}
+			}
+			var rankings = ['GEMVtable']
 			for(var j=0; j < rankings.length; j++) {
 				var rows = document.getElementById(rankings[j]).rows;
 				for(var i = 1, td; i < rows.length; i++){
