@@ -27,7 +27,8 @@
 					if (document.getElementById("TA").checked == true) {
 						//Usefulness
 						if (!clicked) {
-							document.getElementById("GEMdata").innerHTML += "<a class=\"btn btn-primary btn-md\" style='margin-right: 3px;' href=\"https://msmarco.blob.core.windows.net/GEM/GEM_public.tar.gz\">GEM Data</a>"
+							document.getElementById("GEMIdata").innerHTML += "<a class=\"btn btn-primary btn-md\" style='margin-right: 3px;' href=\"https://msmarco.blob.core.windows.net/GEM/GEM_public.tar.gz\">GEM-I Data</a>"
+							document.getElementById("GEMVdata").innerHTML += "<a class=\"btn btn-primary btn-md\" style='margin-right: 3px;' href=\"https://msmarco.blob.core.windows.net/GEM/GEM_public.tar.gz\">GEM-V Data</a>"
 							clicked = true;
 						}
 						alert("Download Links are now viewable")
@@ -219,7 +220,7 @@
 						<div style="overflow-x:scroll; white-space: nowrap">
 						<code>@article{lin2021gem,<br>
 							&nbsp;&nbsp;title={{GEM}: A General Evaluation Benchmark for Multimodal Tasks},<br>
-							&nbsp;&nbsp;author={Lin Su and Nan Duan and Edward Cui and Lei Ji and Chenfei Wu and Huaishao and Luo Yongfei Liu and Ming Zhong and Taroon Bharti and Arun Sacheti},<br>
+							&nbsp;&nbsp;author={Lin Su and Nan Duan and Edward Cui and Lei Ji and Chenfei Wu and Huaishao Luo and Yongfei Liu and Ming Zhong and Taroon Bharti and Arun Sacheti},<br>
 							&nbsp;&nbsp;booktitle="Findings of the Association for Computational Linguistics",<br>
 							&nbsp;&nbsp;year={2021}<br>
 }</code>
@@ -229,7 +230,13 @@
 						<h2>&nbsp;</h2>
 						<h2>Current Team <script type="text/javascript">gen_mail_to_link('GEM-team','microsoft.com','GEM Feedback','[Email us]');</script></h2>
 						<div class="row">
+							<div class="col-md-4"><img src='./img/EdwardCui.jpg' width="117" height="150" /><br /><strong>Edward Cui</strong><br />Principal Software Engineering Manager</a></div>
+							<div class="col-md-4"><img src='./img/LinSu.jpg' width="117" height="150" /><br /><strong>Lin Su</strong><br />Senior Software Engineer</a></div>
 							<div class="col-md-4"><a href="https://www.microsoft.com/en-us/research/people/nanduan/"><img src='https://www.microsoft.com/en-us/research/uploads/prod/2019/08/me.small_.jpg' width="117" height="150" /><br /><strong>Nan Duan</strong><br />Principal Research Manager</a></div>
+							<div class="col-md-4"><img src='./img/LeiJi.png' width="117" height="150" /><br /><strong>Lei Ji</strong><br />Principal Researcher</a></div>
+							<div class="col-md-4"><img src='./img/ChenfeiWu.png' width="117" height="150" /><br /><strong>Chenfei Wu</strong><br />Researcher</a></div>
+							<div class="col-md-4"><img src='./img/MingZhong.png' width="117" height="150" /><br /><strong>Ming Zhong</strong><br />Software Engineer II</a></div>
+							
 						</div>
 					</div>
 				</div>
