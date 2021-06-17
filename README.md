@@ -62,29 +62,22 @@ In order to use our dataset, please navigate to [GEM Leaderboard](https://fuzzy-
 
 ## Leaderboard Submission
 ### Submissions
-To submit your predictions for evaluation, please create a single folder which contains the 11 sub-folders named after each task (see [reference file](evaluation/M3P_prediction_on_GEM_test) for an example). 
+To submit your predictions for evaluation, please create a single folder which contains the 8 sub-folders named after each task. 
 Inside each folder, create one prediction file for each language and name the file using the following format: `{language}.prediction` where `{language}` is the 2 character [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code.
-Please validate that you have done this correctly by evaluating against the development file. Once that is done <a href='GEM-team@microsoft.com'>email your submission</a>. We will reply with your model performance.
+Please <a href='GEM-team@microsoft.com'>email your submission</a>. We will reply with your model performance.
 
 ### Evaluation
+For self-evaluation on dev set, you can refer to below evaluation scripts:
+1. Image Retrieval: ./evaluation/metric-retrieval.py
+2. Image Captioning: https://github.com/tylin/coco-caption
+3. Video Retrieval: ./evaluation/metric-retrieval.py
+4. Video Captioning: https://github.com/Maluuba/nlg-eval
+
 To evaluate your model's performance, we will compare your prediction files with the ground truth files.
 We are keeping our evaluation data held out but we ask all models first evaluate performance on the development portion of the dataset before submitting their predictions for the evaluation dataset.
-To evaluate your performance, please use the following command: 
-```
-python GEM_evaluate.py --prediction_dir <prediction_files_folder> --ground_truth_dir <ground_truth_dir> --tasks QIR,QITR --split dev 
-```
-
-This file has several dependencies:
-```
-numpy
-sklearn
-seqeval
-sacrebleu
-```
 
 The detailed format of each task is at [Evaluation ReadMe](./evaluation/README.md).
-### Baseline
-To aid your model comparison we have included the output of our baseline system, M3P.  Please find the [dev example](evaluation/M3P_prediction_on_GEM_dev) and [test example](evaluation/M3P_prediction_on_GEM_test).
+
 ## Paper
 If you use our benchmark or dataset, please cite our paper `\cite{lin2021gem}`.
 ```
