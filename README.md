@@ -1,7 +1,7 @@
 # GEM: A General Evaluation Benchmark for Multimodal Tasks
 [**Tasks**](#tasks) |
 [**Dataset**](#get-dataset) |
-[**Leaderboard**](https://fuzzy-robot-fa0b9e30.pages.github.io/) |
+[**Leaderboard**](https://microsoft.github.io/GEM/) |
 [**Paper**](https://arxiv.org/abs/2106.09889)
 
 ## Introduction
@@ -58,7 +58,7 @@ We use Title to generate caption text, and use ROUGE-L as the evaluation metric.
 We use video and title to generate caption text, and use ROUGE-L as the evaluation metric.
 
 ## Get Dataset
-In order to use our dataset, please navigate to [GEM Leaderboard](https://fuzzy-robot-fa0b9e30.pages.github.io/) and agree to our terms of service. After you do so a download link will be made available.
+In order to use our dataset, please navigate to [GEM Leaderboard](https://microsoft.github.io/GEM/) and agree to our terms of service. After you do so a download link will be made available.
 
 ## Leaderboard Submission
 ### Submissions
