@@ -2,7 +2,7 @@
 [**Tasks**](#tasks) |
 [**Dataset**](#get-dataset) |
 [**Leaderboard**](https://fuzzy-robot-fa0b9e30.pages.github.io/) |
-[**Paper**](TBD)
+[**Paper**](https://arxiv.org/abs/2106.09889)
 
 ## Introduction
 This repository contains information about the general multi-modal evaluation benchmark GEM, which is composed of GEM-I for image tasks spans 20 languages and GEM-V for video tasks spans 30 languages.
